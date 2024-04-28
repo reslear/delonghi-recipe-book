@@ -1,0 +1,49 @@
+diff --git a/dist/chunk-AMIM6PVT.js b/dist/chunk-AMIM6PVT.js
+index 4bc8873c829071aa8f3eb6dce453b04d05512a7a..8fe1c64108fa3889a2bebb3c0bbeac67cc445bd4 100644
+--- a/dist/chunk-AMIM6PVT.js
++++ b/dist/chunk-AMIM6PVT.js
+@@ -1,2 +1,19 @@
+-import v,{AbortError as T}from"p-queue";import{setMaxListeners as L}from"events";var d="image",x="jpg";var w=new Set(["3dv","ai","amf","art","ase","awg","blp","bmp","bw","cd5","cdr","cgm","cit","cmx","cpt","cr2","cur","cut","dds","dib","djvu","dxf","e2d","ecw","egt","emf","eps","exif","fs","gbr","gif","gpl","grf","hdp","heic","heif","icns","ico","iff","int","inta","jfif","jng","jp2","jpeg","jpg","jps","jxr","lbm","liff","max","miff","mng","msp","nef","nitf","nrrd","odg","ota","pam","pbm","pc1","pc2","pc3","pcf","pct","pcx","pdd","pdn","pgf","pgm","PI1","PI2","PI3","pict","png","pnm","pns","ppm","psb","psd","psp","px","pxm","pxr","qfx","ras","raw","rgb","rgba","rle","sct","sgi","sid","stl","sun","svg","sxd","tga","tif","tiff","v2d","vnd","vrml","vtf","wdp","webp","wmf","x3d","xar","xbm","xcf","xpm"]);import y from"got";import l from"fs";import f from"path";import{pipeline as h}from"stream/promises";import I from"sanitize-filename";var c=class extends Error{constructor(e){super(e),this.name="ArgumentError"}};var p=class extends Error{constructor(e){super(e),this.name="DirectoryError"}};function b(a,e){let n=[...w].map(i=>i.toLowerCase()),t=f.extname(a).replace(".",""),r={url:a,name:"",extension:"",directory:e?.directory?f.normalize(e.directory):process.cwd(),originalName:t===""?void 0:f.basename(a,`.${t}`),originalExtension:t===""?void 0:t,path:""},{base:o,name:s}=f.parse(r.directory);if(o!==s)throw new c("`directory` cannot contain filename");if(typeof e?.name=="function"?r.name=e.name(r.originalName):e?.name&&(r.name=e.name),I(r.name)!==r.name)throw new c("Invalid `name` value");let m=r.name.toLowerCase().split(".").pop();if(m&&n.includes(m))throw new c("`name` cannot contain image extension");if(r.name.trim()===""&&(r.name=r.originalName??d),e?.extension){if(!n.includes(e.extension.toLowerCase())||e.extension.includes("."))throw new c("Invalid `extension` value");r.extension=e.extension}return r.extension===""&&(r.extension=n.includes(t.toLowerCase())?t:x),r.path=f.resolve(r.directory,`${r.name}.${r.extension}`),r}async function u(a,e={}){let n=b(a,e);if(!l.existsSync(n.directory))try{l.mkdirSync(n.directory,{recursive:!0})}catch(t){throw t instanceof Error?new p(t.message):new p(`Failed to create '${n.directory}'`)}return new Promise((t,r)=>{let o=y.stream(n.url,{timeout:{request:e.timeout},retry:{limit:e.maxRetry},headers:e.headers,signal:e.signal}),s=m=>{r(m)};o.on("response",m=>{let i=m.headers["content-type"];if(!i||!i.startsWith("image/")){o.destroy(new Error("The response is not an image."));return}o.off("error",s),h(o,l.createWriteStream(n.path)).then(()=>{t(n)}).catch(g=>{s(g)})}),o.once("error",s)})}async function P(a,e){if(Array.isArray(a)){let n=new v({concurrency:e?.step??5,interval:e?.interval??100,intervalCap:e?.step??5});return e?.signal&&L(1/0,e.signal),new Promise((t,r)=>{let o=[];a.forEach((s,m)=>{n.add(async({signal:i})=>{try{return await u(s,{...e,name:g=>`${e?.name??g??d}-${m+1}`,signal:i})}catch(g){if(g instanceof Error){e?.onError?.(g,s);return}throw g}},{signal:e?.signal}).then(i=>{i&&(e?.onSuccess?.(i),o.push(i))}).catch(i=>{i instanceof T||r(i)})}),n.onIdle().then(()=>{t(o)}).catch(s=>{r(s)})})}return u(a,{...e,signal:e?.signal})}var Q=P;export{c as a,p as b,Q as c};
++import v, { AbortError as T } from "p-queue"; import { setMaxListeners as L } from "events"; var d = "image", x = "jpg"; var w = new Set(["3dv", "ai", "amf", "art", "ase", "awg", "blp", "bmp", "bw", "cd5", "cdr", "cgm", "cit", "cmx", "cpt", "cr2", "cur", "cut", "dds", "dib", "djvu", "dxf", "e2d", "ecw", "egt", "emf", "eps", "exif", "fs", "gbr", "gif", "gpl", "grf", "hdp", "heic", "heif", "icns", "ico", "iff", "int", "inta", "jfif", "jng", "jp2", "jpeg", "jpg", "jps", "jxr", "lbm", "liff", "max", "miff", "mng", "msp", "nef", "nitf", "nrrd", "odg", "ota", "pam", "pbm", "pc1", "pc2", "pc3", "pcf", "pct", "pcx", "pdd", "pdn", "pgf", "pgm", "PI1", "PI2", "PI3", "pict", "png", "pnm", "pns", "ppm", "psb", "psd", "psp", "px", "pxm", "pxr", "qfx", "ras", "raw", "rgb", "rgba", "rle", "sct", "sgi", "sid", "stl", "sun", "svg", "sxd", "tga", "tif", "tiff", "v2d", "vnd", "vrml", "vtf", "wdp", "webp", "wmf", "x3d", "xar", "xbm", "xcf", "xpm"]); import y from "got"; import l from "fs"; import f from "path"; import { pipeline as h } from "stream/promises"; import I from "sanitize-filename"; var c = class extends Error { constructor(e) { super(e), this.name = "ArgumentError" } }; var p = class extends Error { constructor(e) { super(e), this.name = "DirectoryError" } }; function b(a, e) { let n = [...w].map(i => i.toLowerCase()), t = f.extname(a).replace(".", ""), r = { url: a, name: "", extension: "", directory: e?.directory ? f.normalize(e.directory) : process.cwd(), originalName: t === "" ? void 0 : f.basename(a, `.${t}`), originalExtension: t === "" ? void 0 : t, path: "" }, { base: o, name: s } = f.parse(r.directory); if (o !== s) throw new c("`directory` cannot contain filename"); if (typeof e?.name == "function" ? r.name = e.name(r.originalName) : e?.name && (r.name = e.name), I(r.name) !== r.name) throw new c("Invalid `name` value"); let m = r.name.toLowerCase().split(".").pop(); if (m && n.includes(m)) throw new c("`name` cannot contain image extension"); if (r.name.trim() === "" && (r.name = r.originalName ?? d), e?.extension) { if (!n.includes(e.extension.toLowerCase()) || e.extension.includes(".")) throw new c("Invalid `extension` value"); r.extension = e.extension } return r.extension === "" && (r.extension = n.includes(t.toLowerCase()) ? t : x), r.path = f.resolve(r.directory, `${r.name}.${r.extension}`), r } async function u(a, e = {}) { let n = b(a, e); if (!l.existsSync(n.directory)) try { l.mkdirSync(n.directory, { recursive: !0 }) } catch (t) { throw t instanceof Error ? new p(t.message) : new p(`Failed to create '${n.directory}'`) } return new Promise((t, r) => { let o = y.stream(n.url, { timeout: { request: e.timeout }, retry: { limit: e.maxRetry }, headers: e.headers, signal: e.signal }), s = m => { r(m) }; o.on("response", m => { let i = m.headers["content-type"]; if (!i || !i.startsWith("image/")) { o.destroy(new Error("The response is not an image.")); return } o.off("error", s), h(o, l.createWriteStream(n.path)).then(() => { t(n) }).catch(g => { s(g) }) }), o.once("error", s) }) } async function P(a, e) {
++  if (Array.isArray(a)) {
++    let n = new v({ concurrency: e?.step ?? 5, interval: e?.interval ?? 100, intervalCap: e?.step ?? 5 }); return e?.signal && L(1 / 0, e.signal), new Promise((t, r) => {
++      let o = []; a.forEach((s, m) => {
++
++        n.add(async ({ signal: i }) => {
++          try {
++            return await u(s.url || s, {
++              ...e,
++              name: g => s.name ? s.name : `${e?.name ?? g ?? d}-${m + 1}`,
++              signal: i
++})
++} catch (g) { if (g instanceof Error) { e?.onError?.(g, s.url); return } throw g }
++}, { signal: e?.signal }).then(i => { i && (e?.onSuccess?.(i), o.push(i)) }).catch(i => { i instanceof T || r(i) })
++}), n.onIdle().then(() => { t(o) }).catch(s => { r(s.url) })
++})
++} return u(a, { ...e, signal: e?.signal })
++} var Q = P; export { c as a, p as b, Q as c };
+ //# sourceMappingURL=chunk-AMIM6PVT.js.map
+\ No newline at end of file
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index b93aa51324c4bdfdd4436e7adf2804dd9bfdd6f4..33f325120daab38ba138703701c438396aa94f0a 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -90,7 +90,7 @@ type Options = Omit<DownloadOptions, 'name'> & {
+      * When downloading multiple images, `-index` will be appended to the end of the name (suffix).
+      * `index` will start from 1.
+      */
+-    name?: string;
++    name?: string | ((index?: number) => string);
+     /**
+      * Do something when the image is successfully downloaded.
+      * For example, counting the number of successful downloads.
+@@ -128,7 +128,7 @@ type Options = Omit<DownloadOptions, 'name'> & {
+     signal?: AbortSignal;
+ };
+ declare function imgdl(url: string, options?: Options): Promise<Image>;
+-declare function imgdl(url: string[], options?: Options): Promise<Image[]>;
+-declare function imgdl(url: string | string[], options?: Options): Promise<Image | Image[]>;
++declare function imgdl(url: { url: string, name: string}[], options?: Options): Promise<Image[]>;
++declare function imgdl(url: string | { url: string, name: string}[], options?: Options): Promise<Image | Image[]>;
+ 
+ export { type Image, type Options, imgdl as default };

@@ -1,0 +1,10 @@
+{
+  "name": "delonghi-recipe-book",
+  "private": true,
+  "version": "0.0.0",
+  "pnpm": {
+    "patchedDependencies": {
+      "img-dl@0.4.0": "patches/img-dl@0.4.0.patch"
+    }
+  }
+}

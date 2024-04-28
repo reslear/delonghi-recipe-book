@@ -1,0 +1,88 @@
+[
+  {
+    "url": "https://data.delonghigroup.com:8443/documents/10855/27736/multifry",
+    "name": "11813",
+    "extension": "jpg",
+    "directory": "public/db/categories/images/",
+    "path": "/Users/reslear/Documents/dev/os/github/reslear/delonghi-recipe-book/app/public/db/categories/images/11813.jpg"
+  },
+  {
+    "url": "https://data.delonghigroup.com:8443/documents/10855/11180778/Logo_Multigrill.jpg",
+    "name": "11180775",
+    "extension": "jpg",
+    "directory": "public/db/categories/images/",
+    "originalName": "Logo_Multigrill",
+    "originalExtension": "jpg",
+    "path": "/Users/reslear/Documents/dev/os/github/reslear/delonghi-recipe-book/app/public/db/categories/images/11180775.jpg"
+  },
+  {
+    "url": "https://data.delonghigroup.com:8443/documents/10855/11149724/Multioven_logo.png",
+    "name": "11149718",
+    "extension": "png",
+    "directory": "public/db/categories/images/",
+    "originalName": "Multioven_logo",
+    "originalExtension": "png",
+    "path": "/Users/reslear/Documents/dev/os/github/reslear/delonghi-recipe-book/app/public/db/categories/images/11149718.png"
+  },
+  {
+    "url": "https://data.delonghigroup.com:8443/documents/10855/4447301/Sfornatutto_microwave.png",
+    "name": "4718634",
+    "extension": "png",
+    "directory": "public/db/categories/images/",
+    "originalName": "Sfornatutto_microwave",
+    "originalExtension": "png",
+    "path": "/Users/reslear/Documents/dev/os/github/reslear/delonghi-recipe-book/app/public/db/categories/images/4718634.png"
+  },
+  {
+    "url": "https://data.delonghigroup.com:8443/documents/10855/11255587/Livenza_Logo_Blue.png",
+    "name": "11353685",
+    "extension": "png",
+    "directory": "public/db/categories/images/",
+    "originalName": "Livenza_Logo_Blue",
+    "originalExtension": "png",
+    "path": "/Users/reslear/Documents/dev/os/github/reslear/delonghi-recipe-book/app/public/db/categories/images/11353685.png"
+  },
+  {
+    "url": "https://data.delonghigroup.com:8443/documents/10855/11445465/MULTI+COOKER+LOGO.jpg",
+    "name": "11445459",
+    "extension": "jpg",
+    "directory": "public/db/categories/images/",
+    "originalName": "MULTI+COOKER+LOGO",
+    "originalExtension": "jpg",
+    "path": "/Users/reslear/Documents/dev/os/github/reslear/delonghi-recipe-book/app/public/db/categories/images/11445459.jpg"
+  },
+  {
+    "url": "https://data.delonghigroup.com:8443/documents/10855/11929775/Multigrill_Easy",
+    "name": "11929758",
+    "extension": "jpg",
+    "directory": "public/db/categories/images/",
+    "path": "/Users/reslear/Documents/dev/os/github/reslear/delonghi-recipe-book/app/public/db/categories/images/11929758.jpg"
+  },
+  {
+    "url": "https://data.delonghigroup.com:8443/documents/10855/1061275/multicuisine.jpg",
+    "name": "1319394",
+    "extension": "jpg",
+    "directory": "public/db/categories/images/",
+    "originalName": "multicuisine",
+    "originalExtension": "jpg",
+    "path": "/Users/reslear/Documents/dev/os/github/reslear/delonghi-recipe-book/app/public/db/categories/images/1319394.jpg"
+  },
+  {
+    "url": "https://data.delonghigroup.com:8443/documents/10855/12228606/IdealFry_logo_400.png",
+    "name": "12228616",
+    "extension": "png",
+    "directory": "public/db/categories/images/",
+    "originalName": "IdealFry_logo_400",
+    "originalExtension": "png",
+    "path": "/Users/reslear/Documents/dev/os/github/reslear/delonghi-recipe-book/app/public/db/categories/images/12228616.png"
+  },
+  {
+    "url": "https://data.delonghigroup.com:8443/documents/10855/13252274/Logo+Multigrill900_CGH+920_CGH+920D.png",
+    "name": "13252262",
+    "extension": "png",
+    "directory": "public/db/categories/images/",
+    "originalName": "Logo+Multigrill900_CGH+920_CGH+920D",
+    "originalExtension": "png",
+    "path": "/Users/reslear/Documents/dev/os/github/reslear/delonghi-recipe-book/app/public/db/categories/images/13252262.png"
+  }
+]

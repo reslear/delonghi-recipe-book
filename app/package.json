@@ -1,0 +1,28 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
+    "better-sqlite3": "^9.6.0",
+    "nuxt": "^3.10.1"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^2.15.2",
+    "@pinia/nuxt": "^0.5.1",
+    "db0": "^0.1.4",
+    "drizzle-orm": "^0.30.9",
+    "img-dl": "^0.4.0",
+    "pinia": "^2.1.7",
+    "radix-vue": "^1.7.2",
+    "zod": "^3.23.4"
+  }
+}
